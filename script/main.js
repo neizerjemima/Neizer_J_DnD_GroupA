@@ -3,9 +3,9 @@ let theButtons = document.querySelectorAll("#buttonHolder img"),
 	puzzleBoard = document.querySelector(".puzzle-board"),
 	puzzlePieces = document.querySelectorAll(".puzzle-pieces img"),
 	dropZones = document.querySelectorAll(".drop-zone"),
-    piecesBoard = document.querySelectorAll(".puzzle-pieces"),	
+    piecesBoard = document.querySelector(".puzzle-pieces"),	
     
-    draggedPiece = null; 
+    draggedPiece; 
 
 
 function changeBGImage() {
