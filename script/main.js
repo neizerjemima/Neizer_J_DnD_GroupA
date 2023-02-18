@@ -3,9 +3,9 @@ let theButtons = document.querySelectorAll("#buttonHolder img"),
 	puzzleBoard = document.querySelector(".puzzle-board"),
 	puzzlePieces = document.querySelectorAll(".puzzle-pieces img"),
 	dropZones = document.querySelectorAll(".drop-zone"),
-    	
+    piecesBoard = document.querySelectorAll(".puzzle-pieces"),	
     
-    draggedPiece; 
+    draggedPiece = null; 
 
 
 function changeBGImage() {
@@ -13,14 +13,15 @@ function changeBGImage() {
     //bug fix #2
     dropZones.forEach(zone => {
         while (zone.firstChild) {
-            puzzleBoard.appendChild(zone.firstChild);
+            zone.removeChild(zone.firstChild);
         }
      });
 
         puzzlePieces.forEach(piece => {
         piece.classList.remove('dropped');
-        puzzleBoard.appendChild(piece);
+        piecesBoard.appendChild(piece);
         });
+
 	puzzleBoard.style.backgroundImage = `url('images/backGround${this.id}.jpg')`;
 }
 
